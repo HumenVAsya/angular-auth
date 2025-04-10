@@ -1,0 +1,65 @@
+/* Основний стиль картки */
+.assessment-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.assessment-card {
+  display: inline-flex;
+  justify-content: space-around;
+  cursor: pointer;
+
+  flex-direction: row;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  padding: 16px;
+  transition: transform 0.3s ease;
+}
+
+.assessment-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Стиль для зображення */
+.assessment-image img {
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+/* Стиль для деталей */
+.assessment-details {
+  /*display: flex;*/
+}
+
+.assessment-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.users-resolved {
+  font-size: 1rem;
+  color: #666;
+}
+
+.status {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.status.active {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.status.inactive {
+  background-color: #dc3545;
+  color: #fff;
+}

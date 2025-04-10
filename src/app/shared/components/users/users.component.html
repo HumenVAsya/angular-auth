@@ -1,0 +1,8 @@
+<div class="card-container">
+  <div *ngFor="let user of users" class="card">
+    <h2>{{ user.name }} {{ user.lastName }}</h2>
+    <p>DOB: {{ user.dateOfBirth }}</p>
+    <p>Education: {{ user.education }}</p>
+    <p class="role">{{ user.role }}</p>
+  </div>
+</div>

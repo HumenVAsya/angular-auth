@@ -18,15 +18,24 @@ export class HeaderComponent implements OnInit{
   authService = inject(authService);
   readonly authStore = inject(AuthStore);
   readonly UserRole = UserRole;
+  store = inject(AuthStore)
+  isAuthenticated = false;
+  storedUser = localStorage.getItem('user');
 
+  ngOnInit() {
+    if(this.storedUser){
+      const userData = JSON.parse(this.storedUser)
+
+      this.store.authorization(userData)
+    }
+
+    this.authService.isAuthenticated$.subscribe(auth => {
+      this.isAuthenticated = auth;
+    });
+  }
 
   logout() {
     this.authService.logout();
-
     this.router.navigateByUrl('/login');
-  }
-
-  ngOnInit() {
-    console.log(this.authStore.role());
   }
 }

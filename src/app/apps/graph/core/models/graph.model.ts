@@ -1,8 +1,8 @@
 export interface GraphData {
-  Agreeableness: number;
-  Drive: number;
-  Luck: number;
-  Openess: number;
+  agreeableness: number;
+  drive: number;
+  luck: number;
+  openness: number;
 }
 
 export interface GraphResponse {

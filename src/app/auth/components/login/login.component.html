@@ -2,9 +2,17 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <input type="text" placeholder="Email" formControlName="email">
+    <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      <small *ngIf="form.get('email')?.hasError('required')">Email is required.</small>
+      <small *ngIf="form.get('email')?.hasError('pattern')">Please enter a valid email address.</small>
+    </div>
   </div>
   <div>
     <input type="password" placeholder="Password" formControlName="password">
+    <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+      <small *ngIf="form.get('password')?.hasError('required')">Password is required.</small>
+      <small *ngIf="form.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
+    </div>
   </div>
   <div>
     <button type="submit">Sign in</button>

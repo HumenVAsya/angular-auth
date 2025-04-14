@@ -1,8 +1,8 @@
-<header class="app-header">
+<header class="app-header" *ngIf="isAuthenticated">
   <nav class="nav-container">
     <div class="nav-left">
       <a routerLink="/dashboard" routerLinkActive="active">assessments</a>
-      <a href="" *ngIf="authStore.role() === UserRole.ADMIN" routerLink="/users" routerLinkActive="active">users</a>
+      <a *ngIf="authStore.role() === UserRole.ADMIN" routerLink="/users" routerLinkActive="active">users</a>
     </div>
     <button class="logout-btn" (click)="logout()">Logout</button>
   </nav>

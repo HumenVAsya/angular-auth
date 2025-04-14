@@ -1,0 +1,18 @@
+<div class="assessment-card-container">
+  <div class="assessment-card" *ngFor="let assessment of assessments"
+       [routerLink]="['/dashboard/graph']" [queryParams]="{ id: assessment.id }">
+    <div class="assessment-image">
+      <img [src]="assessment.image_url" alt="{{assessment.name}}">
+    </div>
+    <div class="assessment-details">
+      <h3 class="assessment-title">{{assessment.name}}</h3>
+      <p class="users-resolved">Users Resolved: <strong>{{assessment.users_resolved}}</strong></p>
+      <p class="status" [class.active]="assessment.active" [class.inactive]="!assessment.active">
+        {{ assessment.active ? 'Active' : 'Inactive' }}
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
